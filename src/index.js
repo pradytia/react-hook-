@@ -5,6 +5,7 @@ import reduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import Reducer from './redux/reducer';
+import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -16,7 +17,9 @@ const globalStore = createStore(Reducer, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
     <Provider store={globalStore}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   ,
   document.getElementById('root')
