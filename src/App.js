@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Route, Switch } from "react-router-dom";
 import './App.css';
+import FormPages from './component/FormPages';
 import Home from './component/Home';
 import Maps from './component/Maps';
 
@@ -10,14 +11,14 @@ class App extends Component {
     latitude : null
   }
 
-  async componentDidMount(){
-    try{
-      setInterval(async () => {
-       this.getLocation();
-      }, 60000);
-    }catch(e){
-      console.log(e)
-    }
+   componentDidMount(){
+    // try{
+    //   setInterval(() => {
+    //    this.getLocation();
+    //   }, 60000);
+    // }catch(e){
+    //   console.log(e)
+    // }
   }
 
     //get coordinates longlat
@@ -39,7 +40,7 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-        <h1>latitude : {this.state.latitude}</h1>
+        <FormPages/>
     </div>
   );
 }

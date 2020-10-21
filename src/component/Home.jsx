@@ -1,3 +1,4 @@
+import Axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -27,6 +28,12 @@ function Home (){
             username : usernameFORM,
             password : passwordFORM
         }
+
+        var headers = {
+            'Content-Type': 'application/json',
+        }
+
+        Axios.post('', data, {headers : headers})
 
         dispatch({
             type : 'SUBMIT_FORM',
@@ -58,7 +65,7 @@ function Home (){
                             </div>
                         </div>
                     </div>
-                    <button type="button" className="btn btn-primary" onClick={()=> dispatch({ type : 'SUBMIT_FORM', payload : usernameFORM })}>SUBMIT</button>
+                    <button type="button" className="btn btn-primary" onClick={()=> dispatch({ type : 'ON_CLICK_FORM', payload : 0 })}>SUBMIT</button>
                 </div>
             </div>
         </>
