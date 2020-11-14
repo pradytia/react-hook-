@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-// import { Route, Switch } from "react-router-dom";
-import './App.css';
-import FormPages from './component/FormPages';
-import Home from './component/Home';
-import Maps from './component/Maps';
+import ReactMap from './component/ReactMap';
 
 class App extends Component {
 
@@ -37,10 +33,11 @@ class App extends Component {
         }
   }
 
+
   render(){
   return (
     <div className="App">
-        <FormPages/>
+        <ReactMap/>
     </div>
   );
 }
